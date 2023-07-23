@@ -7,15 +7,9 @@ import cors from 'cors';
 
 const app = express();
 
-const PRODUCTION = process.env.NODE_ENV === 'production'
-console.log(process.env.NODE_ENV)
-if (PRODUCTION) {
-    app.use(cors({
-        origin: 'https://coruscating-stardust-29117a.netlify.app'
-    }));
-} else {
-    app.use(cors());
-}
+app.use(cors({
+    origin: 'https://coruscating-stardust-29117a.netlify.app'
+}));
 
 // Замените <username>, <password>, <cluster-url> и <database-name> на значения из вашей строки подключения MongoDB Atlas
 const dbURI = 'mongodb+srv://Alex:iwOJgHcG02ktln1H@cluster0.fg8oz.mongodb.net/';
